@@ -6,7 +6,6 @@ import Searchbar from "./Searchbar";
 function App() {
   return (
     <div className="App">
-      {/* <Header /> */}
       <Searchbar />
       <Footer />
     </div>
