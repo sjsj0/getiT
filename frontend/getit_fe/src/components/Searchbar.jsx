@@ -9,7 +9,7 @@ function Searchbar() {
 
       <div className="nav-div">
 
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="white" expand="lg">
           <Container className="searchContainer">
 
             <Navbar.Brand href="#home">
