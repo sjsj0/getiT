@@ -1,0 +1,11 @@
+.card_container{
+    display: flex;
+    max-width: 100%;
+}
+
+/*#container {*/
+/*  display: flex;*/
+/*  width: 250px;*/
+/*  position: relative;*/
+/*  border: solid 1px green;*/
+/*}*/
