@@ -1,4 +1,5 @@
-
+#Pycharm files
+/.idea
 
 ### Django ###
 *.log
