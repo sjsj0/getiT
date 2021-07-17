@@ -29,7 +29,8 @@ export const BoldLink = styled.a`
     font-size: 12px;
     color: rgb(241,196,15);
     font-weight: 500;
-    text-decoration: none; 
+    text-decoration: none;
+    margin: 0 4px;
 `;
 
 export const Input = styled.input`
