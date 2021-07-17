@@ -6,7 +6,7 @@ import Slides from "./Slides"
 import ItemCard from "./cards";
 import './card_container.css';
 
-import { AccountBox } from './accountBox/Login-register';
+import { AccountBox, LoginApp, RegisterApp } from './accountBox/Login-register';
 
 function App() {
     return (
@@ -23,9 +23,14 @@ function App() {
             </div>
 
             <Footer />
+
             
 <h1>-----------</h1>
-            <AccountBox />
+            <LoginApp />
+<h1>-----------</h1>
+
+<h1>-----------</h1>
+            <RegisterApp />
 <h1>-----------</h1>
         </div>
             );
