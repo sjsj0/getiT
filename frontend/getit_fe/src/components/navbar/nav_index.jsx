@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Logo } from "../logo/logo_index";
+import { SearchBar } from "../searchbar/searchbar_index";
 import { Accessibility } from "./accessibility";
 import { NavLinks } from "./navLinks";
 
@@ -12,6 +13,7 @@ const NavBarContainer = styled.div`
     display: flex;
     align-items: center;
     padding: 0 1.5em;
+    margin-bottom: 15px;
 `;
 
 const LeftSection = styled.div`
@@ -40,7 +42,8 @@ export function Navbar(props) {
             </LeftSection>
 
             <MiddleSection>
-                <NavLinks />
+                {/* <NavLinks /> */}
+                <SearchBar />
             </MiddleSection>
 
             <RightSection>
