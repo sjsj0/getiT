@@ -1,6 +1,5 @@
 import './App.css';
 import Footer from "./Footer";
-import Searchbar from "./Searchbar";
 import Slides from "./Slides"
 import ItemCard from "./cards";
 import './card_container.css';
@@ -8,7 +7,7 @@ import './card_container.css';
 import { LoginApp, RegisterApp } from './accountBox/Login-register';
 import styled from "styled-components";
 import { Navbar } from './navbar/nav_index';
-import { SearchBar } from './searchbar/searchbar_index';
+import { HomePage } from '../containers/HomePage/home_index';
 
 const AppContainer = styled.div`
     width: 100%;
@@ -22,30 +21,26 @@ function App() {
     return (
         <div className="App">
             {/* <Searchbar /> */}
-            <Navbar />
-                <Slides />
-                <div className="card_container">
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                </div>
+            {/* <Navbar />
+            <Slides />
+            <div className="card_container">
+                <ItemCard />
+                <ItemCard />
+                <ItemCard />
+            </div>
 
-                <Footer />
+            <Footer />
 
 
-                <h1>-----------</h1>
-                <LoginApp />
-                <h1>-----------</h1>
+            <h1>-----------</h1>
+            <LoginApp />
+            <h1>-----------</h1>
 
-                <h1>-----------</h1>
-                <RegisterApp />
-                <h1>-----------</h1>
+            <h1>-----------</h1>
+            <RegisterApp />
+            <h1>-----------</h1> */}
 
-            {/* <Navbar /> */}
-            {/* <AppContainer> */}
-            
-                {/* <SearchBar /> */}
-            {/* </AppContainer> */}
+            <HomePage />
 
         </div>
 
