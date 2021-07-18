@@ -14,12 +14,13 @@ const CardSectionContainer = styled.div`
     ${'' /* background-color: grey; */}
     display: flex;
     flex-direction: column;
-    align-self: space-around;
+    align-items: left;
 `;
 
 const CardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 `;
 
 
