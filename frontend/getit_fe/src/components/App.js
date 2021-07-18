@@ -2,13 +2,13 @@ import './App.css';
 import Footer from "./Footer";
 import Searchbar from "./Searchbar";
 import Slides from "./Slides"
-import ItemCard from "./cards";
-import './card_container.css';
 
-import { LoginApp, RegisterApp } from './accountBox/Login-register';
+import {ItemCard} from './card/card_index';
+
+import {LoginApp, RegisterApp} from './accountBox/Login-register';
 import styled from "styled-components";
-import { Navbar } from './navbar/nav_index';
-import { SearchBar } from './searchbar/searchbar_index';
+import {Navbar} from './navbar/nav_index';
+import {SearchBar} from './searchbar/searchbar_index';
 
 const AppContainer = styled.div`
     width: 100%;
@@ -18,41 +18,50 @@ const AppContainer = styled.div`
     margin-top: 7em;
 `;
 
+const CardContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+`;
+
 function App() {
     return (
         <div className="App">
             {/* <Searchbar /> */}
-            <Navbar />
-                <Slides />
-                <div className="card_container">
-                    <ItemCard />
-                    <ItemCard />
-                    <ItemCard />
-                </div>
+            <Navbar/>
+            <Slides/>
+            <CardContainer className="card_container">
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+                <ItemCard/>
+            </CardContainer>
 
-                <Footer />
+            <Footer/>
 
 
-                <h1>-----------</h1>
-                <LoginApp />
-                <h1>-----------</h1>
+            <h1>-----------</h1>
+            <LoginApp/>
+            <h1>-----------</h1>
 
-                <h1>-----------</h1>
-                <RegisterApp />
-                <h1>-----------</h1>
+            <h1>-----------</h1>
+            <RegisterApp/>
+            <h1>-----------</h1>
 
             {/* <Navbar /> */}
             {/* <AppContainer> */}
-            
-                {/* <SearchBar /> */}
+
+            {/* <SearchBar /> */}
             {/* </AppContainer> */}
 
         </div>
-
-
-
-
-
 
 
     );
