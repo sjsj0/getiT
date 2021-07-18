@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components"
 import { LoginForm } from "./loginForm";
 import { RegisterForm } from "./registerForm";
@@ -45,14 +45,14 @@ const BackDrop = styled(motion.div)`
     transform: rotate(60deg);
     top: -290px;
     left: -70px;
-    background: rgb(241,196,15);
-    background: linear-gradient(58deg, rgba(241,196,15,1) 20%, rgba(243,172,18,1) 100%);
+    background: linear-gradient(to right, #2ebf91, #8360c3);
 `;
 
 const HeaderContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 `;
 
 const HeaderText = styled.h2`

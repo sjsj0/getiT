@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ItemCard } from "../../components/card/card_index";
 import { ProductCard } from "../../components/productCard/card_index";
 
 import Cars from "../../static/car.jpg";
@@ -20,7 +21,7 @@ const CardSectionContainer = styled.div`
 const CardWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 `;
 
 
