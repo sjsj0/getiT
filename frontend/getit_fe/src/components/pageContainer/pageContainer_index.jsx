@@ -6,7 +6,7 @@ const PageWrapper = styled.div`
   min-height: 100%;
   padding: 0;
   margin: 0;
-  // display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 `;
