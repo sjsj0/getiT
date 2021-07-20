@@ -20,7 +20,7 @@ export function LoginForm(props) {
         
         <MutedLink href="#">
             Don't have an account?{" "}
-            <BoldLink href="#" >Register</BoldLink>
+            <BoldLink href="/register" >Register</BoldLink>
         </MutedLink>
     </BoxContainer>
     )
