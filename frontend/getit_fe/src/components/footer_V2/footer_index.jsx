@@ -63,37 +63,37 @@ const Title = styled.p`
 
 export function FooterV2(props) {
     return (
-        <FooterContainer> 
-           <Row>
-             <Column> 
-              <Title>About Us</Title>
-              <FooterLink href="#">Aim</FooterLink>
-              <FooterLink href="#">Vision and Mission</FooterLink>
-              <FooterLink href="#">Testimonials</FooterLink>
-             </Column>
-             <Column> 
-              <Title> Services</Title>
-              <FooterLink href="#">Buy Now </FooterLink>
-              <FooterLink href="#">Sell Your Products</FooterLink>
-              <FooterLink href="#">Delivery</FooterLink>
-             </Column>
-             <Column> 
-              <Title> Social </Title>
-                  <FooterLink href="#">  <FacebookIcon/> Facebook  </FooterLink>
-                  <FooterLink href="#"> <InstagramIcon/> Instagram </FooterLink>
-                <FooterLink href="#"><TwitterIcon/> Twitter </FooterLink>
-                 <FooterLink href="#"><LinkedInIcon/> LinkedIn</FooterLink> 
-             </Column>
-             <Column>
-              <h3>getiT</h3>
-              <p>Your Local Store</p>
-              </Column>
-           </Row>
+        <FooterContainer>
+            <Row>
+                <Column>
+                    <Title>About Us</Title>
+                    <FooterLink href="#">Aim</FooterLink>
+                    <FooterLink href="#">Vision and Mission</FooterLink>
+                    <FooterLink href="#">Testimonials</FooterLink>
+                </Column>
+                <Column>
+                    <Title> Services</Title>
+                    <FooterLink href="#">Buy Now </FooterLink>
+                    <FooterLink href="#">Sell Your Products</FooterLink>
+                    <FooterLink href="#">Delivery</FooterLink>
+                </Column>
+                <Column>
+                    <Title> Social </Title>
+                    <FooterLink href="#"> <FacebookIcon/> Facebook </FooterLink>
+                    <FooterLink href="#"> <InstagramIcon/> Instagram </FooterLink>
+                    <FooterLink href="#"><TwitterIcon/> Twitter </FooterLink>
+                    <FooterLink href="#"><LinkedInIcon/> LinkedIn</FooterLink>
+                </Column>
+                <Column>
+                    <h3>getiT</h3>
+                    <p>Your Local Store</p>
+                </Column>
+            </Row>
 
-           <Copyright> © Copyright 2021 getiT. All rights reserved. </Copyright>
-  
+            <Copyright> © Copyright 2021 getiT. All rights reserved. </Copyright>
+
         </FooterContainer>
- 
+
 
     )
 }

@@ -6,6 +6,7 @@ import { HomePage } from '../containers/HomePage/home_index';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { LoginPage } from '../containers/LoginPage/login_index';
 import { RegisterPage } from '../containers/RegisterPage/register_index';
+import {ProductPage} from "../containers/ProductPage/productPage_index";
 
 const AppContainer = styled.div`
     width: 100%;
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/home" component={HomePage} />
                     <Route path="/login" exact component={LoginPage} />
                     <Route path="/register" exact component={RegisterPage} />
+                    <Route path="/product" exact component={ProductPage} />
                 </Switch>
             </Router>
         </div>
