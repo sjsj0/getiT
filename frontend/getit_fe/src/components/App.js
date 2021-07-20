@@ -1,5 +1,6 @@
 import './App.css';
-import Footer from "./Footer";
+//import Footer from "./Footer";
+
 import Searchbar from "./Searchbar";
 import Slides from "./Slides"
 import ItemCard from "./cards";
@@ -8,6 +9,7 @@ import './card_container.css';
 import { LoginApp, RegisterApp } from './accountBox/Login-register';
 import styled from "styled-components";
 import { Navbar } from './navbar/nav_index';
+import { FooterContainer } from './footer_V2/footer_index';
 import { SearchBar } from './searchbar/searchbar_index';
 
 const AppContainer = styled.div`
@@ -30,7 +32,7 @@ function App() {
                     <ItemCard />
                 </div>
 
-                <Footer />
+                <FooterContainer />
 
 
                 <h1>-----------</h1>
