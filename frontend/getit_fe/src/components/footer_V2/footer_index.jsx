@@ -13,7 +13,7 @@ import Email from '@material-ui/icons/Email';
 const FooterContainer = styled.div`
 width: 100%;
 min-height: 300px;
-padding: 30px 60px;
+padding: 20px 150px;
 color:#f0f9ff;
 background-color:#282d32;
 display: flex;
@@ -92,7 +92,7 @@ export function FooterV2(props) {
              </Column>
              <Column>
               <h3>getiT</h3>
-              <p>Your Local Store</p> <br/>
+              <p>Your Local Store</p>
               <p> <EmailIcon/> getitofficial@gmail.com </p>
               <p> <PhoneIcon/> +91 9999XXXXXX </p>
               <p> <BusinessIcon/> Patiala, Punjab </p>
