@@ -42,8 +42,8 @@ export function Navbar(props) {
             </LeftSection>
 
             <MiddleSection>
-                {/* <NavLinks /> */}
-                <SearchBar />
+                <NavLinks />
+                {/* <SearchBar /> */}
             </MiddleSection>
 
             <RightSection>
