@@ -6,8 +6,8 @@ import { IoClose } from "react-icons/io5";
 const SearchBarContainer = styled.div`
     display: flex:
     flex-direction: column;
-    width: 34em;
-    height: 2.5em;
+    width: 50em;
+    height: 3.5em;
     background-color: #fff;
     border-radius: 6px;
     box-shadow: 2px 1px 2px 1px rgba(0,0,0,0.14);
@@ -16,11 +16,12 @@ const SearchBarContainer = styled.div`
 
 const SearchInputContainer = styled.div`
     width: 100%;
-    min-height: 2em;
+    min-height: 3.5em;
     display: flex;
     align-items: center;
     position: relative;
     padding: 2px 15px;
+    justify-content: center;
 `;
 
 const SearchInput = styled.input`
@@ -28,7 +29,7 @@ const SearchInput = styled.input`
     height: 100%;
     outline: none;
     border: none;
-    font-size: 15px;
+    font-size: 20px;
     color: #12112e;
     font-weight: 500;
     border-radius: 6px;
