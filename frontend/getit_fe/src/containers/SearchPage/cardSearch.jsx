@@ -23,9 +23,17 @@ const CardWrapper = styled.div`
     justify-content: center;
 `;
 
+const SearchTitle = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    color: Black;
+    margin: 40px 0 10px 60px;
+`;
 
-export function CardSection(props) {
+
+export function CardSearch(props) {
      return <CardSectionContainer>
+            <SearchTitle><h3>You have Searched For - Dummy</h3></SearchTitle>
                 <CardWrapper>
                     <ProductCard thumbnail={Cars} title="A BMW" seller="RMX Automobiles" rating="5" price="25lac"/>
                     <ProductCard thumbnail={Flowers} title="A BMW" seller="RMX Automobiles" rating="4" price="25lac"/>

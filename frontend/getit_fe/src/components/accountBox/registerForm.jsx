@@ -14,7 +14,7 @@ export function RegisterForm(props) {
         </FormContainer>
 
         <Marginer direction="vertical" margin={10} />
-        <MutedLink href="#">Forget your password?</MutedLink>
+        {/* <MutedLink href="#">Forget your password?</MutedLink> */}
         <Marginer direction="vertical" margin="1.6em" />
 
         <SubmitButton type="submit">Register</SubmitButton>
@@ -22,7 +22,7 @@ export function RegisterForm(props) {
 
         <MutedLink href="#">
             Already registered?{" "}
-            <BoldLink href="#" >Signin</BoldLink>
+            <BoldLink href="/login" >Signin</BoldLink>
         </MutedLink>
     </BoxContainer>
     )
