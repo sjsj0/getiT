@@ -10,7 +10,7 @@ const SearchBarContainer = styled.div`
     height: 2.5em;
     background-color: #fff;
     border-radius: 6px;
-    ${'' /* box-shadow: 8px 2px 12px 3px rgba(0,0,0,0.14); */}
+    box-shadow: 2px 1px 2px 1px rgba(0,0,0,0.14);
     overflow: hidden;
 `;
 

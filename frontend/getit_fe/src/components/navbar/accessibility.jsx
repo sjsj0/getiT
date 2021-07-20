@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { Marginer } from "../accountBox/marginer";
 
 const AccessibilityContainer = styled.div`
     display: flex;
@@ -8,7 +10,7 @@ const AccessibilityContainer = styled.div`
 const RegisterButton = styled.button`
     border: 0;
     outline: 0;
-    padding: 5px 1em;
+    padding: 7px 1em;
     color: #fff;
     font-size: 13px;
     font-weight: 600;
@@ -54,8 +56,14 @@ const LoginButton = styled.button`
 export function Accessibility(props) {
     return (
         <AccessibilityContainer>
-            <RegisterButton>Register</RegisterButton>
-            <LoginButton>Login</LoginButton>
+            <Link to="/register">
+                <RegisterButton>Register</RegisterButton>
+            </Link>
+            <Marginer direction="horizontal" margin={10} />
+
+            <Link to="/login">
+                <LoginButton>Login</LoginButton>
+            </Link>
         </AccessibilityContainer>
     )
 }

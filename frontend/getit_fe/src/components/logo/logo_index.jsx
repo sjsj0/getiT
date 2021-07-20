@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import GetiTLogo from "../../static/getiT.svg"
 
@@ -10,6 +11,7 @@ const LogoWrapper = styled.div`
 const LogoImg = styled.div`
     width: 80px;
     height: 50px;
+    cursor: pointer;
 
     img {
         width: 100%;
@@ -29,9 +31,11 @@ const LogoText = styled.h2`
 export function Logo(props) {
     return (
         <LogoWrapper>
-            <LogoImg>
-                <img src={GetiTLogo} alt="getiT" />
-            </LogoImg>
+            <Link to="/home">
+                <LogoImg>
+                    <img src={GetiTLogo} alt="getiT" />
+                </LogoImg>
+            </Link>
             {/* <LogoText>Greenland</LogoText> */}
         </LogoWrapper>
     )
