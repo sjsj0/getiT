@@ -4,10 +4,11 @@ import { TopSection } from "./topSection";
 import { CardSection } from "./cardSection";
 import Slides from "../../components/Slides.jsx"
 import { Marginer } from "../../components/accountBox/marginer";
-import { Footer } from "../../components/Footer/footer_index";
+import { FooterV2 } from "../../components/footer_V2/footer_index";
 
 export function HomePage(props) {
     return (
+
         <PageContainer>
             <TopSection />
             <Marginer direction="vertical" margin={30} /> 
@@ -15,9 +16,7 @@ export function HomePage(props) {
             <Marginer direction="vertical" margin={30} /> 
             <CardSection />
             <Marginer direction="vertical" margin={30} />
-            <Footer />
+            <FooterV2 />
         </PageContainer>
-        
-
     )
 }

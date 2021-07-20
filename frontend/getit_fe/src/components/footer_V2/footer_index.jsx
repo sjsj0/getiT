@@ -6,7 +6,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 
-export const Container = styled.div`
+export const FooterContainer = styled.div`
 padding:30px 60px;
 color:#f0f9ff;
 background-color:#282d32;
@@ -24,10 +24,11 @@ bottom: 0;
 
 
 
-export const Copyright = styled.div`
-position: absolute; 
+export const Copyright = styled.div` 
 bottom: 7px;
-margin-left: 585px;
+margin-top:30px;
+display:flex;
+justify-content: center;
 font-size: 12px;
 color: grey;
 `;
@@ -46,7 +47,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 150px;
+  margin-left: 10px;
 `;
 
 export const about = styled.div`
@@ -55,8 +56,8 @@ export const about = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 50px;
   @media (max-width: 1000px) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
@@ -87,9 +88,9 @@ export const logo = styled.p`{
 `;
 
 
-export function FooterContainer(props) {
+export function FooterV2(props) {
     return (
-        <Container> 
+        <FooterContainer> 
            <Row>
              <Column> 
               <Title>About Us</Title>
@@ -120,7 +121,7 @@ export function FooterContainer(props) {
    
        
   
-        </Container>
+        </FooterContainer>
  
 
     )

@@ -5,7 +5,7 @@ import { Navbar } from "../../components/navbar/nav_index";
 const TopSectionContainer = styled.div`
     width: 100%;
     height: 50px;
-    ${'' /* background-color: grey; */}
+//   background-color: grey; 
 `;
 
 export function TopSection(props) {
