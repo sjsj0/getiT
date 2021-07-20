@@ -4,6 +4,10 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
+import BusinessIcon from '@material-ui/icons/Business';
+import Email from '@material-ui/icons/Email';
 
 
 const FooterContainer = styled.div`
@@ -61,6 +65,8 @@ const Title = styled.p`
 `;
 
 
+
+
 export function FooterV2(props) {
     return (
         <FooterContainer> 
@@ -86,9 +92,13 @@ export function FooterV2(props) {
              </Column>
              <Column>
               <h3>getiT</h3>
-              <p>Your Local Store</p>
+              <p>Your Local Store</p> <br/>
+              <p> <EmailIcon/> getitofficial@gmail.com </p>
+              <p> <PhoneIcon/> +91 9999XXXXXX </p>
+              <p> <BusinessIcon/> Patiala, Punjab </p>
               </Column>
            </Row>
+
 
            <Copyright> © Copyright 2021 getiT. All rights reserved. </Copyright>
   
