@@ -12,7 +12,7 @@ import Email from '@material-ui/icons/Email';
 
 const FooterContainer = styled.div`
 width: 100%;
-min-height: 300px;
+min-height: 250px;
 padding: 20px 150px;
 color:#f0f9ff;
 background-color:#282d32;
