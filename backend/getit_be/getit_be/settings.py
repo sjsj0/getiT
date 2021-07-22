@@ -27,6 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'account',
+    'product',
 ]
 
 MIDDLEWARE = [
@@ -65,11 +68,16 @@ WSGI_APPLICATION = 'getit_be.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6tid3acjh8m13',
+        'HOST': 'ec2-23-23-164-251.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'vstkdwounmltbe',
+        'PASSWORD': config("DBPASS"),
     }
 }
 
+AUTH_USER_MODEL = 'account.Account'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -113,3 +121,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTH_USER_MODEL = 'account.CustomUser'
