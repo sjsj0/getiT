@@ -8,6 +8,8 @@ import { LoginPage } from '../containers/LoginPage/login_index';
 import { RegisterPage } from '../containers/RegisterPage/register_index';
 import {ProductPage} from "../containers/ProductPage/productPage_index";
 import { SearchPage } from '../containers/SearchPage/searchPage_index';
+import { Profile } from '../containers/AccountPage/accountForm';
+
 
 const AppContainer = styled.div`
     width: 100%;
@@ -27,6 +29,7 @@ function App() {
                     <Route path="/register" exact component={RegisterPage} />
                     <Route path="/product" exact component={ProductPage} />
                     <Route path="/search" exact component={SearchPage} />
+                    <Route path="/profile" exact component={Profile} />
                 </Switch>
             </Router>
         </div>

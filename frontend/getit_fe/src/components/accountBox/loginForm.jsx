@@ -5,6 +5,7 @@ import { Marginer } from "./marginer";
 
 export function LoginForm(props) {
     return (
+        
     <BoxContainer>
         <FormContainer>
             <Input type="email" placeholder="Email" />
