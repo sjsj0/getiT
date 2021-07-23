@@ -8,10 +8,10 @@ export class RegisterForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            Name: '',
-            Email: '',
-            Password: '',
-            CPassword: ''
+            username: '',
+            email: '',
+            password: '',
+            // CPassword: ''
         }
     }
 
@@ -21,47 +21,63 @@ export class RegisterForm extends Component {
     submitHandler = (e) => {
         e.preventDefault()
         console.log(this.state)
+
+        axios
+            .post('http://127.0.0.1:8000/account/users/', this.state)
+            .then(response => {
+                console.log("Got response")
+                console.log(response)
+            })
+            .catch(error => {
+                console.log("Got error")
+                console.log(error)
+                console.log(error.response.data) 
+                console.log(error.response.status) 
+                console.log(error.response.headers)
+            })
+
     }
 
-    register_func = event => {
-        console.log("register here");
-        if (this.state.Password !== this.state.CPassword) {
-            alert("Password should be same !")
-        } else {
-            const registeration_data = this.state;
+    // register_func = event => {
+    //     console.log("register here");
+    //     if (this.state.Password !== this.state.CPassword) {
+    //         alert("Password should be same !")
+    //     } else {
+    //         const registeration_data = this.state;
 
-            axios({
-                    method: 'post',
-                    url: 'http://127.0.0.1:8000/test_data/',
-                    data: registeration_data
-                }
-            )
-                .then(response => {
-                    console.log(response)
-                    this.setState({articleId: response.data.articleId})
-                    console.log(this.state)
-                });
-        }
-    }
+    //         axios({
+    //                 method: 'post',
+    //                 url: 'http://127.0.0.1:8000/test_data/',
+    //                 data: registeration_data
+    //             }
+    //         )
+    //             .then(response => {
+    //                 console.log(response)
+    //                 this.setState({articleId: response.data.articleId})
+    //                 console.log(this.state)
+    //             });
+    //     }
+    // }
 
     render() {
-        const {Name, Email, Password, CPassword} = this.state
+        const {username, email, password} = this.state
         return (
             <BoxContainer>
-                <FormContainer onSubmit={this.submitHandler}>
-                    <Input type="text" placeholder="Full Name" name="Name" value={Name} onChange={this.changeHandler}/>
-                    <Input type="email" placeholder="Email" name="Email" value={Email} onChange={this.changeHandler}/>
-                    <Input type="password" placeholder="Password" name="Password" value={Password}
+                <FormContainer>
+                    <Input type="text" placeholder="User Name" name="username" value={username} onChange={this.changeHandler}/>
+                    <Input type="email" placeholder="Email" name="email" value={email} onChange={this.changeHandler}/>
+                    <Input type="password" placeholder="Password" name="password" value={password}
                            onChange={this.changeHandler}/>
-                    <Input type="password" placeholder="Confirm Password" name="CPassword" value={CPassword}
-                           onChange={this.changeHandler}/>
-                    <Marginer direction="vertical" margin={10}/>
+                    {/* <Input type="password" placeholder="Confirm Password" name="CPassword" value={CPassword}
+                           onChange={this.changeHandler}/> */}
+                    
+                </FormContainer>
+                
+                <Marginer direction="vertical" margin={10}/>
                     {/* <MutedLink href="#">Forget your password?</MutedLink> */}
                     {/* <Marginer direction="vertical" margin="1.6em" /> */}
 
-                    <SubmitButton onClick={this.register_func} type="submit">Register</SubmitButton>
-                </FormContainer>
-
+                <SubmitButton onClick={this.submitHandler} type="submit">Register</SubmitButton>
 
                 <Marginer direction="vertical" margin="1em"/>
 

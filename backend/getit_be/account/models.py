@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils.translation import LANGUAGE_SESSION_KEY
 
 class MyAccountManager(BaseUserManager):
-	def create_user(self, email, username, first_name, last_name, phone, password=None):
+	def create_user(self, email, username, first_name=None, last_name=None, phone=None, password=None):
 		if not email:
 			raise ValueError('Users must have an email address')
 		if not username:
@@ -48,9 +48,9 @@ class Account(AbstractBaseUser):
 	is_active = models.BooleanField(default=True)
 	is_staff = models.BooleanField(default=False)
 	is_superuser = models.BooleanField(default=False)
-	first_name = models.CharField(max_length=100,default='')
-	last_name = models.CharField(max_length=100,default='')
-	phone = models.CharField(max_length=10,default='')
+	first_name = models.CharField(max_length=100,null=True)
+	last_name = models.CharField(max_length=100,null=True)
+	phone = models.CharField(max_length=10,null=True)
 	# password = models.CharField(max_length=256)
 
 	USERNAME_FIELD= 'email'
