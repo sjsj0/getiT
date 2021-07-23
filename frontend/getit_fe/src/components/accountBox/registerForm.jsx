@@ -1,23 +1,45 @@
-import React from "react";
+import React, {Component} from "react";
 import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton } from "./common";
 import { Marginer } from "./marginer";
 
 
-export function RegisterForm(props) {
+export class RegisterForm extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            Name: '',
+            Email: '',
+            Password: '',
+            CPassword: ''
+        }
+    }
+
+    changeHandler = (e) => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+    submitHandler = (e) => {
+        e.preventDefault()
+        console.log(this.state)
+    }
+ 
+    render(){
+        const {Name,Email,Password,CPassword} = this.state
     return (
     <BoxContainer>
-        <FormContainer>
-            <Input type="text" placeholder="Full Name" />
-            <Input type="email" placeholder="Email" />
-            <Input type="password" placeholder="Password" />
-            <Input type="password" placeholder="Confirm Password" />
+        <FormContainer onSubmit={this.submitHandler}>
+            <Input type="text" placeholder="Full Name" name="Name" value={Name} onChange={this.changeHandler}/>
+            <Input type="email" placeholder="Email" name="Email" value={Email} onChange={this.changeHandler}/>
+            <Input type="password" placeholder="Password" name="Password" value={Password} onChange={this.changeHandler}/>
+            <Input type="password" placeholder="Confirm Password" name="CPassword" value={CPassword} onChange={this.changeHandler}/>
+            <Marginer direction="vertical" margin={10} />
+            {/* <MutedLink href="#">Forget your password?</MutedLink> */}
+            {/* <Marginer direction="vertical" margin="1.6em" /> */}
+
+            <SubmitButton type="submit">Register</SubmitButton>
         </FormContainer>
 
-        <Marginer direction="vertical" margin={10} />
-        {/* <MutedLink href="#">Forget your password?</MutedLink> */}
-        <Marginer direction="vertical" margin="1.6em" />
-
-        <SubmitButton type="submit">Register</SubmitButton>
+        
         <Marginer direction="vertical" margin="1em" />
 
         <MutedLink href="#">
@@ -26,4 +48,7 @@ export function RegisterForm(props) {
         </MutedLink>
     </BoxContainer>
     )
+    }
 }
+
+// export default RegisterForm;
