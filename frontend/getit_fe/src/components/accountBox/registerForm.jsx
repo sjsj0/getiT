@@ -25,14 +25,33 @@ export class RegisterForm extends Component {
         e.preventDefault()
         // console.log(this.state)
 
-        const { password, CPassword} = this.state;
+        const { username, email, password, CPassword} = this.state;
+        
+        const username_length = username.length
+        const email_length = email.length
+        const pass_length = password.length
+
+        if(pass_length<5){
+            alert("Password should be at least of 5 characters.")
+        }
+
+        else if(username_length === 0){
+            alert("Username can't be blank.")
+        }
+
+        else if(email_length === 0){
+            alert("Email can't be blank.")
+        }
+
+        
+        else{
         // Password Validation
         if (password !== CPassword) {
             alert("Passwords are not Same ! Try Again");
         }
         
         else{
-            
+
             // Retrieving data in the state (Except Confirm Password Field/Key)
             const uname = this.state.username;
             const em = this.state.email;
@@ -68,6 +87,7 @@ export class RegisterForm extends Component {
                 // console.log(error.response.headers)
             })
 
+            }
         }
 
 
