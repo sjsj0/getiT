@@ -11,22 +11,52 @@ export class RegisterForm extends Component {
             username: '',
             email: '',
             password: '',
-            // CPassword: ''
+            CPassword: ''
         }
     }
 
     changeHandler = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
+
     submitHandler = (e) => {
         e.preventDefault()
         console.log(this.state)
+
+        const { password, CPassword} = this.state;
+        // Password Validation
+        if (password !== CPassword) {
+            alert("Passwords are not Same ! Try Again");
+        }
+        
+        else{
+            
+            // Retrieving data in the state (Except Confirm Password Field/Key)
+            const uname = this.state.username;
+            const em = this.state.email;
+            const pass = this.state.password;
+
+            this.state={
+                username:uname,
+                email:em,
+                password:pass,
+            } // updated state with confirm password KEY removed
 
         axios
             .post('http://127.0.0.1:8000/account/users/', this.state)
             .then(response => {
                 console.log("Got response")
                 console.log(response)
+                alert("You are Registered !");
+                // Clearing state
+                this.state = {
+                    username: '',
+                    email: '',
+                    password: '',
+                    CPassword: ''
+                }
+
+
             })
             .catch(error => {
                 console.log("Got error")
@@ -35,6 +65,10 @@ export class RegisterForm extends Component {
                 console.log(error.response.status) 
                 console.log(error.response.headers)
             })
+
+        }
+
+
 
     }
 
@@ -59,8 +93,9 @@ export class RegisterForm extends Component {
     //     }
     // }
 
+
     render() {
-        const {username, email, password} = this.state
+        const {username, email, password,CPassword} = this.state
         return (
             <BoxContainer>
                 <FormContainer>
@@ -68,8 +103,8 @@ export class RegisterForm extends Component {
                     <Input type="email" placeholder="Email" name="email" value={email} onChange={this.changeHandler}/>
                     <Input type="password" placeholder="Password" name="password" value={password}
                            onChange={this.changeHandler}/>
-                    {/* <Input type="password" placeholder="Confirm Password" name="CPassword" value={CPassword}
-                           onChange={this.changeHandler}/> */}
+                     <Input type="password" placeholder="Confirm Password" name="CPassword" value={CPassword}
+                           onChange={this.changeHandler}/> 
                     
                 </FormContainer>
                 
