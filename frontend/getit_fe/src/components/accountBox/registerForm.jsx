@@ -23,7 +23,7 @@ export class RegisterForm extends Component {
 
     submitHandler = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        // console.log(this.state)
 
         const { password, CPassword} = this.state;
         // Password Validation
@@ -51,21 +51,21 @@ export class RegisterForm extends Component {
         axios
             .post('http://127.0.0.1:8000/account/users/', this.dataState)
             .then(response => {
-                console.log("Got response")
-                console.log(response)
+                // console.log("Got response")
+                // console.log(response)
                 alert("You are Registered !");
                 // Clearing state
             
 
             })
             .catch(error => {
-                console.log("Got error")
-                console.log(error)
-                console.log(error.response.data) 
+                // console.log("Got error")
+                // console.log(error)
+                // console.log(error.response.data) 
                 alert(error.response.data.email)
                 alert(error.response.data.username)
-                console.log(error.response.status) 
-                console.log(error.response.headers)
+                // console.log(error.response.status) 
+                // console.log(error.response.headers)
             })
 
         }
