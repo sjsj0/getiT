@@ -13,6 +13,8 @@ export class RegisterForm extends Component {
             password: '',
             CPassword: ''
         }
+
+        this.initialState = this.state 
     }
 
     changeHandler = (e) => {
@@ -36,32 +38,32 @@ export class RegisterForm extends Component {
             const em = this.state.email;
             const pass = this.state.password;
 
-            this.state={
+            this.dataState={
                 username:uname,
                 email:em,
                 password:pass,
-            } // updated state with confirm password KEY removed
+            }
+             // updated state with confirm password KEY removed
+
+             //clear state
+             this.setState(this.initialState)
 
         axios
-            .post('http://127.0.0.1:8000/account/users/', this.state)
+            .post('http://127.0.0.1:8000/account/users/', this.dataState)
             .then(response => {
                 console.log("Got response")
                 console.log(response)
                 alert("You are Registered !");
                 // Clearing state
-                this.state = {
-                    username: '',
-                    email: '',
-                    password: '',
-                    CPassword: ''
-                }
-
+            
 
             })
             .catch(error => {
                 console.log("Got error")
                 console.log(error)
                 console.log(error.response.data) 
+                alert(error.response.data.email)
+                alert(error.response.data.username)
                 console.log(error.response.status) 
                 console.log(error.response.headers)
             })
