@@ -28,7 +28,17 @@ INSTALLED_APPS = [
     'corsheaders',
     'account',
     'product',
+    'rest_framework.authtoken',
 ]
+
+
+# globally restricting all viewsets..not using right now, we opted to implement it individually viewsets wise..
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#         # 'rest_framework.permissions.AllowAny',
+#     ]
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

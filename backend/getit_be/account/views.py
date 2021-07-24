@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from .serializers import AccountSerializer
 from rest_framework import viewsets
 from django.http import JsonResponse
+
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
 # from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -15,6 +19,12 @@ def Index(request):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = Account.objects.all()
     serializer_class = AccountSerializer
+
+    # --------permissions not restricted to this viewset as new user has to be created without token, implement this for other viewsets---------
+    # ---authentication implemented on this specific class, if dont want globally then comment it in settings.py file, now we have not used anything
+    # permission_classes = [IsAuthenticated]
+    # ---type of authentication used here is TokenAuthentication
+    # authentication_classes = (TokenAuthentication, )
 
 
 # @csrf_exempt
