@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton } from "./common";
 import { Marginer } from "./marginer";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 export class LoginForm extends Component {
 
@@ -11,7 +12,7 @@ export class LoginForm extends Component {
             username: '',
             password: '',
             isAuthenticated: false,
-            resData: ''
+            recievedToken: ''
         }
 
         this.initialState = this.state
@@ -39,41 +40,38 @@ export class LoginForm extends Component {
         axios
             .post('http://127.0.0.1:8000/auth/', this.payload)
             .then(response => {
-                console.log("Got response")
-                console.log(response)
-                console.log(response.data.token)
+                // console.log("Got response")
+                // console.log(response)
+                // console.log(response.data.token)
                 this.setState({
-                    resData: response.token,
+                    recievedToken: response.token,
                     isAuthenticated: true
                 });
                 alert("You are Logged in !");
 
-                
+
             })
             .catch(error => {
-                console.log("Got error")
-                console.log(error)
-                console.log(error.response.data)
-                console.log(error.response.status)
+                // console.log("Got error")
+                // console.log(error)
+                // console.log(error.response.data)
+                // console.log(error.response.status)
                 this.setState({
-                    resData: 'No data from server',
+                    recievedToken: 'No data from server',
                     isAuthenticated: false
                 });
+                alert("Enter correct credentials!!");
             })
 
     }
 
-
-
-
-
-
-
-
-
     render() {
 
         const { username, password } = this.state
+        
+        if (this.state.isAuthenticated === true) {
+            return <Redirect to="/search" />
+        }
 
         return (
 
@@ -96,5 +94,7 @@ export class LoginForm extends Component {
                 </MutedLink>
             </BoxContainer>
         )
+
+
     }
 }

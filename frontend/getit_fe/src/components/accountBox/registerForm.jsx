@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton } from "./common";
 import { Marginer } from "./marginer";
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 export class RegisterForm extends Component {
 
@@ -11,7 +12,8 @@ export class RegisterForm extends Component {
             username: '',
             email: '',
             password: '',
-            CPassword: ''
+            CPassword: '',
+            isRegistered: false
         }
 
         this.initialState = this.state
@@ -30,8 +32,6 @@ export class RegisterForm extends Component {
         const username_length = username.length
         const email_length = email.length
         const pass_length = password.length
-
-
 
         if (username_length === 0) {
             alert("Username can't be blank.")
@@ -73,14 +73,18 @@ export class RegisterForm extends Component {
                     .then(response => {
                         // console.log("Got response")
                         // console.log(response)
+                        this.setState({
+                            isRegistered: true
+                        });
                         alert("You are Registered !");
-
-
                     })
                     .catch(error => {
                         // console.log("Got error")
                         // console.log(error)
-                        // console.log(error.response.data) 
+                        // console.log(error.response.data)
+                        this.setState({
+                            isRegistered: false
+                        });
                         alert(error.response.data.email)
                         alert(error.response.data.username)
                         // console.log(error.response.status) 
@@ -90,34 +94,15 @@ export class RegisterForm extends Component {
             }
         }
 
-
-
     }
-
-    // register_func = event => {
-    //     console.log("register here");
-    //     if (this.state.Password !== this.state.CPassword) {
-    //         alert("Password should be same !")
-    //     } else {
-    //         const registeration_data = this.state;
-
-    //         axios({
-    //                 method: 'post',
-    //                 url: 'http://127.0.0.1:8000/test_data/',
-    //                 data: registeration_data
-    //             }
-    //         )
-    //             .then(response => {
-    //                 console.log(response)
-    //                 this.setState({articleId: response.data.articleId})
-    //                 console.log(this.state)
-    //             });
-    //     }
-    // }
-
 
     render() {
         const { username, email, password, CPassword } = this.state
+
+        if (this.state.isRegistered === true) {
+            return <Redirect to="/login" />
+        }
+
         return (
             <BoxContainer>
                 <FormContainer>
@@ -144,5 +129,3 @@ export class RegisterForm extends Component {
         )
     }
 }
-
-// export default RegisterForm;
