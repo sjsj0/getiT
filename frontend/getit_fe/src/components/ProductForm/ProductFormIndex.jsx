@@ -8,13 +8,14 @@ export class ProductForm extends Component{
         constructor(props) {
             super(props)
             this.state = {
+                seller:'sjsj0',
                 title: '',
                 about: '',
                 description: '',
                 category: '',
                 price: '',
                 quantity: '',
-                image: '',
+                // image: '',
                 productadded: false
             }
 
@@ -56,24 +57,24 @@ export class ProductForm extends Component{
                     this.setState(this.initialState)
 
                     axios
-                        .post('http://127.0.0.1:8000/account/users/', this.state)
+                        .post('http://127.0.0.1:8000/products/', this.state)
                         .then(response => {
-                            // console.log("Got response")
-                            // console.log(response)
+                            console.log("Got response")
+                            console.log(response)
                             this.setState({
                                 productadded: true
                             });
                             alert("Product is added !");
                         })
                         .catch(error => {
-                            // console.log("Got error")
-                            // console.log(error)
-                            // console.log(error.response.data)
+                            console.log("Got error")
+                            console.log(error)
+                            console.log(error.response.data)
                             this.setState({
                                 productadded: false
                             });
-                            alert(error.response.data.email)
-                            alert(error.response.data.username)
+                            // alert(error.response.data.email)
+                            // alert(error.response.data.username)
                         })
 
             }
@@ -81,6 +82,8 @@ export class ProductForm extends Component{
         }
 
     render() {
+
+        const { title, about, description, category, price, quantity } = this.state
 
         return(
             <div>
@@ -93,47 +96,47 @@ export class ProductForm extends Component{
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Title</TextLabel>
-                        <Input type="text" name="title"  />
+                        <Input type="text" name="title" value={title} onChange={this.changeHandler}  />
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>About</TextLabel>
-                        <Input type="text"  name="about"  />
+                        <Input type="text" name="about" value={about} onChange={this.changeHandler} />
                     </FormContainer>
         
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Description</TextLabel>
-                        <Input type="text"  name="description"  />
+                        <Input type="text" name="description" value={description} onChange={this.changeHandler} />
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Category</TextLabel>
-                        <Input type="text"  name="category"  />
+                        <Input type="text" name="category" value={category} onChange={this.changeHandler} />
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Price</TextLabel>
-                        <Input type="number"  name="price" />
+                        <Input type="number" name="price" value={price} onChange={this.changeHandler}/>
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Quantity</TextLabel>
-                        <Input type="number"  name="quantity" />
+                        <Input type="number" name="quantity" value={quantity} onChange={this.changeHandler}/>
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Photo</TextLabel>
-                        <input type="file" id="img" name="image" accept="image/*"/>
+                        {/* <input type="file" id="img" name="image" accept="image/*"/> */}
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={15} />
-                    <SubmitButton  type="submit">Add</SubmitButton>
+                    <SubmitButton onClick={this.submitHandler} type="submit">Add</SubmitButton>
                     <Marginer direction="vertical" margin="1em" />
                 </BoxContainer>
             </div>

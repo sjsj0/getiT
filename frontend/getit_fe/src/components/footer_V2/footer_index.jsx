@@ -7,7 +7,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Email';
 import PhoneIcon from '@material-ui/icons/Phone';
 import BusinessIcon from '@material-ui/icons/Business';
-import Email from '@material-ui/icons/Email';
+// import Email from '@material-ui/icons/Email';
 
 
 const FooterContainer = styled.div`
