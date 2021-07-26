@@ -18,7 +18,7 @@ from product.models import Product
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['seller', 'title', 'date_added',
+    list_display = ['seller', 'title', 'category', 'date_added',
                     'about', 'description', 'quantity', 'price']
     search_fields = ('seller', 'title',)
     readonly_fields = ['date_added',]

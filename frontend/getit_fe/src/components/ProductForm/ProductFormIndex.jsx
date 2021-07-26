@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BoxContainer, FormContainer, HeaderContainer, Input, SubmitButton, TextLabel } from "./FormCommon";
 import { Marginer } from "../accountBox/marginer";
+import axios from "axios";
 
 export class ProductForm extends Component{
 
@@ -116,7 +117,7 @@ export class ProductForm extends Component{
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Price</TextLabel>
-                        <Input type="text"  name="price" />
+                        <Input type="number"  name="price" />
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />

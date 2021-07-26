@@ -7,6 +7,7 @@ class Product(models.Model):
     title = models.CharField(max_length=100, null=False)
     about = models.TextField(max_length=256, null=False, default="Sample Product")
     description = models.TextField(max_length=1024, null=False, default="Description of Product")
+    category = models.TextField(max_length=100, null=False, default="Groceries")
     quantity = models.PositiveIntegerField(default=1, null=False)
     price = models.IntegerField(default=100, null=False)
     date_added = models.DateTimeField(verbose_name='date added', auto_now_add=True)
