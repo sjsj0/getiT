@@ -3,7 +3,83 @@ import { BoxContainer, FormContainer, HeaderContainer, Input, SubmitButton, Text
 import { Marginer } from "../accountBox/marginer";
 
 export class ProductForm extends Component{
-    render(){
+
+        constructor(props) {
+            super(props)
+            this.state = {
+                title: '',
+                about: '',
+                description: '',
+                category: '',
+                price: '',
+                quantity: '',
+                image: '',
+                productadded: false
+            }
+
+            this.initialState = this.state;
+        }
+
+        changeHandler = (e) => {
+            this.setState({ [e.target.name]: e.target.value })
+        }
+
+        submitHandler = (e) => {
+            e.preventDefault()
+            console.log(this.state)
+
+            const { title, about, description, category} = this.state;
+
+            const title_length = title.length
+            const about_length = about.length
+            const desc_length = description.length
+            const category_length = category.length
+            
+            if (title_length === 0) {
+                alert("Title can't be blank.")
+            }
+
+            else if (about_length === 0) {
+                alert("About can't be blank.")
+            }
+
+            else if (desc_length === 0) {
+                alert("Description can't be blank")
+            }
+
+            else if (category_length === 0) {
+                alert("Category can't be blank")
+            }
+
+            else {
+                    this.setState(this.initialState)
+
+                    axios
+                        .post('http://127.0.0.1:8000/account/users/', this.state)
+                        .then(response => {
+                            // console.log("Got response")
+                            // console.log(response)
+                            this.setState({
+                                productadded: true
+                            });
+                            alert("Product is added !");
+                        })
+                        .catch(error => {
+                            // console.log("Got error")
+                            // console.log(error)
+                            // console.log(error.response.data)
+                            this.setState({
+                                productadded: false
+                            });
+                            alert(error.response.data.email)
+                            alert(error.response.data.username)
+                        })
+
+            }
+
+        }
+
+    render() {
 
         return(
             <div>
@@ -46,13 +122,13 @@ export class ProductForm extends Component{
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Quantity</TextLabel>
-                        <Input type="text"  name="quantity" />
+                        <Input type="number"  name="quantity" />
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Photo</TextLabel>
-                        <input type="file" id="img" name="img" accept="image/*"/>
+                        <input type="file" id="img" name="image" accept="image/*"/>
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={15} />
