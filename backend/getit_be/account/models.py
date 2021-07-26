@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils.translation import LANGUAGE_SESSION_KEY
 
 class MyAccountManager(BaseUserManager):
-	def create_user(self, email, username, first_name=None, last_name=None, phone=None, password=None):
+	def create_user(self, email, username, is_seller, first_name=None, last_name=None, phone=None, password=None):
 		if not email:
 			raise ValueError('Users must have an email address')
 		if not username:
@@ -15,6 +15,7 @@ class MyAccountManager(BaseUserManager):
             first_name=first_name,
 			last_name=last_name,
 			phone=phone,
+			is_seller = is_seller,
 		)
 		
 		print('Hello User')
@@ -22,7 +23,7 @@ class MyAccountManager(BaseUserManager):
 		user.save(using=self._db)
 		return user
 
-	def create_superuser(self, email, username, password, first_name=None, last_name=None, phone=None):
+	def create_superuser(self, email, username, password, is_seller, first_name=None, last_name=None, phone=None):
 		user = self.create_user(
 			email=self.normalize_email(email),
 			password=password,
@@ -30,6 +31,7 @@ class MyAccountManager(BaseUserManager):
             first_name=first_name,
 			last_name=last_name,
 			phone=phone,
+			is_seller = is_seller,
 		)
 		user.is_admin = True
 		user.is_staff = True
@@ -51,6 +53,7 @@ class Account(AbstractBaseUser):
 	first_name = models.CharField(max_length=100,null=True)
 	last_name = models.CharField(max_length=100,null=True)
 	phone = models.CharField(max_length=10,null=True)
+	is_seller = models.BooleanField(null=False)
 	# password = models.CharField(max_length=256)
 
 	USERNAME_FIELD= 'email'

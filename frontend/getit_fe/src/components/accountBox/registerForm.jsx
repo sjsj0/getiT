@@ -24,9 +24,15 @@ export class RegisterForm extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    clickHandler = (e) => {
+        this.setState(prevState => ({
+            seller: !prevState.seller
+        }));
+    }
+
     submitHandler = (e) => {
         e.preventDefault()
-        // console.log(this.state)
+        console.log(this.state)
 
         const { username, email, password, CPassword } = this.state;
 
@@ -120,7 +126,7 @@ export class RegisterForm extends Component {
                         </SellerText>
                         <Marginer direction="horizontal" margin={10} />
                         <CheckboxContainer>
-                            <input type="checkbox" name="seller" value={seller} onChange={this.changeHandler} />
+                            <input type="checkbox" name="seller" value={seller} onChange={this.clickHandler} />
                         </CheckboxContainer>
                     </SellerContainer>
 
