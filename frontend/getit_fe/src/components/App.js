@@ -9,6 +9,7 @@ import { RegisterPage } from '../containers/RegisterPage/register_index';
 import {ProductPage} from "../containers/ProductPage/productPage_index";
 import { SearchPage } from '../containers/SearchPage/searchPage_index';
 import { Profile } from '../containers/AccountPage/accountForm';
+import { AddProducts } from '../containers/AddProducts/AddProducts';
 
 
 const AppContainer = styled.div`
@@ -30,6 +31,7 @@ function App() {
                     <Route path="/product" exact component={ProductPage} />
                     <Route path="/search" exact component={SearchPage} />
                     <Route path="/profile" exact component={Profile} />
+                    <Route path="/addproduct" exact component={AddProducts} />
                 </Switch>
             </Router>
         </div>
