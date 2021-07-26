@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton } from "./common";
+import { BoldLink, BoxContainer, CheckboxContainer, FormContainer, Input, MutedLink, SellerContainer, SellerText, SubmitButton } from "./common";
 import { Marginer } from "./marginer";
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
@@ -13,6 +13,7 @@ export class RegisterForm extends Component {
             email: '',
             password: '',
             CPassword: '',
+            seller: false,
             isRegistered: false
         }
 
@@ -57,11 +58,13 @@ export class RegisterForm extends Component {
                 const uname = this.state.username;
                 const em = this.state.email;
                 const pass = this.state.password;
+                const seller = this.state.seller
 
                 this.dataState = {
                     username: uname,
                     email: em,
                     password: pass,
+                    is_seller: seller
                 }
                 // updated state with confirm password KEY removed
 
@@ -97,7 +100,7 @@ export class RegisterForm extends Component {
     }
 
     render() {
-        const { username, email, password, CPassword } = this.state
+        const { username, email, password, CPassword, seller } = this.state
 
         if (this.state.isRegistered === true) {
             return <Redirect to="/login" />
@@ -110,6 +113,17 @@ export class RegisterForm extends Component {
                     <Input type="email" placeholder="Email" name="email" value={email} onChange={this.changeHandler} />
                     <Input type="password" placeholder="Password" name="password" value={password} onChange={this.changeHandler} />
                     <Input type="password" placeholder="Confirm Password" name="CPassword" value={CPassword} onChange={this.changeHandler} />
+                    
+                    <SellerContainer>
+                        <SellerText>
+                            Are you a seller?
+                        </SellerText>
+                        <Marginer direction="horizontal" margin={10} />
+                        <CheckboxContainer>
+                            <input type="checkbox" name="seller" value={seller} onChange={this.changeHandler} />
+                        </CheckboxContainer>
+                    </SellerContainer>
+
 
                 </FormContainer>
 
