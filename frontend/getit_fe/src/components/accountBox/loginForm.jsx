@@ -38,7 +38,7 @@ export class LoginForm extends Component {
         this.setState(this.initialState)
 
         axios
-            .post('http://127.0.0.1:8000/auth/', this.payload)
+            .post('http://127.0.0.1:8000/account/login/', this.payload)
             .then(response => {
                 // console.log("Got response")
                 // console.log(response)

@@ -78,7 +78,7 @@ export class RegisterForm extends Component {
                 this.setState(this.initialState)
 
                 axios
-                    .post('http://127.0.0.1:8000/account/users/', this.dataState)
+                    .post('http://127.0.0.1:8000/account/register/', this.dataState)
                     .then(response => {
                         // console.log("Got response")
                         // console.log(response)

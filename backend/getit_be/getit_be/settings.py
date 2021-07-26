@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'account',
     'product',
     'rest_framework.authtoken',
+    'knox',
 ]
 
 
@@ -39,6 +40,11 @@ INSTALLED_APPS = [
 #         # 'rest_framework.permissions.AllowAny',
 #     ]
 # }
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

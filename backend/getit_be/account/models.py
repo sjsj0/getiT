@@ -57,7 +57,7 @@ class Account(AbstractBaseUser):
 	# password = models.CharField(max_length=256)
 
 	USERNAME_FIELD= 'email'
-	REQUIRED_FIELDS= ['username', 'first_name' , 'phone', 'last_name']
+	REQUIRED_FIELDS= ['username', 'first_name' , 'phone', 'last_name', 'is_seller']
 
 	objects = MyAccountManager()
 
