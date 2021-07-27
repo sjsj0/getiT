@@ -4,11 +4,22 @@ import styled from "styled-components";
 
 
 export const BoxContainer = styled.div`
-    width: 100%;
+    width: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
+`;
+
+export const HeaderContainer = styled.div`
+    width: 100%;
+    height: 45px;
+    ${'' /* display: flex; */}
+    flex-direction: column;
+    ${'' /* padding: 10px 0; */}
+    background-color: #05445E;
+    font-size: 30px;
+    color: white;
 `;
 
 export const FormContainer = styled.form`
@@ -18,20 +29,20 @@ export const FormContainer = styled.form`
     box-shadow: 0px 0px 2.5px rgba(15,15,15, 0.19);
 `;
 
-export const MutedLink = styled.div`
-    font-size: 11px;
-    color: rgba(200, 200, 200, 0.8);
-    font-weight: 500;
-    text-decoration: none;
-`;
+// export const MutedLink = styled.div`
+//     font-size: 11px;
+//     color: rgba(200, 200, 200, 0.8);
+//     font-weight: 500;
+//     text-decoration: none;
+// `;
 
-export const BoldLink = styled.a`
-    font-size: 12px;
-    color: #5963c3;
-    font-weight: 500;
-    text-decoration: none;
-    margin: 0 4px;
-`;
+// export const BoldLink = styled.a`
+//     font-size: 12px;
+//     color: #5963c3;
+//     font-weight: 500;
+//     text-decoration: none;
+//     margin: 0 4px;
+// `;
 
 export const Input = styled.input`
     width: 100%;
@@ -74,27 +85,12 @@ export const SubmitButton = styled.button`
     }
 `;
 
-export const SellerContainer = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: right;
-    ${'' /* justify-content : left; */}
-    margin: 10px;
-`;
 
-export const SellerText = styled.div`
-    font-size: 12px;
-    color: #5963c3;
-    font-weight: 500;
-    text-decoration: none;
-    margin: 0 4px;
+export const TextLabel = styled.label`
+    align-items: left;
     display: flex;
-    justify-content: center;
-    align-items: center;
-`;
-
-export const CheckboxContainer = styled.div`
-    align-items: center;
-    justify-content: center;
+    justify-content: start;
+    padding: 2px 5px 2px 5px;
+    background-color: #D4F1F4;
+    font-size: 16px;
 `;

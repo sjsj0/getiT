@@ -1,0 +1,51 @@
+appdirs==1.4.4
+asgiref @ file:///tmp/build/80754af9/asgiref_1605055780383/work
+attrs @ file:///tmp/build/80754af9/attrs_1620827162558/work
+black==19.10b0
+certifi==2021.5.30
+cffi==1.14.6
+charset-normalizer==2.0.3
+click @ file:///tmp/build/80754af9/click_1621604852318/work
+coreapi==2.3.3
+coreschema==0.0.4
+cryptography==3.4.7
+defusedxml==0.7.1
+Django @ file:///tmp/build/80754af9/django_1613762073373/work
+django-cors-headers==3.7.0
+django-templated-mail==1.1.1
+djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/djangorestframework_1616757768152/work
+djangorestframework-simplejwt==4.7.2
+djoser==2.1.0
+Faker @ file:///tmp/build/80754af9/faker_1617786690324/work
+idna==3.2
+importlib-metadata @ file:///C:/ci/importlib-metadata_1617877477759/work
+itypes==1.2.0
+Jinja2==3.0.1
+MarkupSafe==2.0.1
+mypy-extensions==0.4.3
+oauthlib==3.1.1
+passlib==1.7.4
+pathspec==0.7.0
+Pillow==8.3.1
+psycopg2 @ file:///C:/ci/psycopg2_1612298766762/work
+pycparser==2.20
+PyJWT==2.1.0
+python-dateutil @ file:///home/ktietz/src/ci/python-dateutil_1611928101742/work
+python-decouple==3.4
+python3-openid==3.2.0
+pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
+regex @ file:///C:/ci/regex_1625610745707/work
+requests==2.26.0
+requests-oauthlib==1.3.0
+six @ file:///C:/ci/six_1605205404068/work
+social-auth-app-django==4.0.0
+social-auth-core==4.1.0
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+text-unidecode==1.3
+toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+typed-ast @ file:///C:/ci/typed-ast_1624953797214/work
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1624965014186/work
+uritemplate==3.0.1
+urllib3==1.26.6
+wincertstore==0.2
+zipp @ file:///tmp/build/80754af9/zipp_1625570634446/work

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Logo } from "../logo/logo_index";
-import { SearchBar } from "../searchbar/searchbar_index";
 import { Accessibility } from "./accessibility";
 import { NavLinks } from "./navLinks";
 

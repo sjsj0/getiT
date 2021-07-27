@@ -4,12 +4,16 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
+import BusinessIcon from '@material-ui/icons/Business';
+// import Email from '@material-ui/icons/Email';
 
 
 const FooterContainer = styled.div`
 width: 100%;
-min-height: 300px;
-padding: 30px 60px;
+min-height: 250px;
+padding: 20px 150px;
 color:#f0f9ff;
 background-color:#282d32;
 display: flex;
@@ -61,39 +65,45 @@ const Title = styled.p`
 `;
 
 
+
+
 export function FooterV2(props) {
     return (
-        <FooterContainer>
-            <Row>
-                <Column>
-                    <Title>About Us</Title>
-                    <FooterLink href="#">Aim</FooterLink>
-                    <FooterLink href="#">Vision and Mission</FooterLink>
-                    <FooterLink href="#">Testimonials</FooterLink>
-                </Column>
-                <Column>
-                    <Title> Services</Title>
-                    <FooterLink href="#">Buy Now </FooterLink>
-                    <FooterLink href="#">Sell Your Products</FooterLink>
-                    <FooterLink href="#">Delivery</FooterLink>
-                </Column>
-                <Column>
-                    <Title> Social </Title>
-                    <FooterLink href="#"> <FacebookIcon/> Facebook </FooterLink>
-                    <FooterLink href="#"> <InstagramIcon/> Instagram </FooterLink>
-                    <FooterLink href="#"><TwitterIcon/> Twitter </FooterLink>
-                    <FooterLink href="#"><LinkedInIcon/> LinkedIn</FooterLink>
-                </Column>
-                <Column>
-                    <h3>getiT</h3>
-                    <p>Your Local Store</p>
-                </Column>
-            </Row>
+        <FooterContainer> 
+           <Row>
+             <Column> 
+              <Title>About Us</Title>
+              <FooterLink href="#">Aim</FooterLink>
+              <FooterLink href="#">Vision and Mission</FooterLink>
+              <FooterLink href="#">Testimonials</FooterLink>
+             </Column>
+             <Column> 
+              <Title> Services</Title>
+              <FooterLink href="#">Buy Now </FooterLink>
+              <FooterLink href="#">Sell Your Products</FooterLink>
+              <FooterLink href="#">Delivery</FooterLink>
+             </Column>
+             <Column> 
+              <Title> Social </Title>
+                  <FooterLink href="#">  <FacebookIcon/> Facebook  </FooterLink>
+                  <FooterLink href="#"> <InstagramIcon/> Instagram </FooterLink>
+                <FooterLink href="#"><TwitterIcon/> Twitter </FooterLink>
+                 <FooterLink href="#"><LinkedInIcon/> LinkedIn</FooterLink> 
+             </Column>
+             <Column>
+              <h3>getiT</h3>
+              <p>Your Local Store</p>
+              <p> <EmailIcon/> getitofficial@gmail.com </p>
+              <p> <PhoneIcon/> +91 9999XXXXXX </p>
+              <p> <BusinessIcon/> Patiala, Punjab </p>
+              </Column>
+           </Row>
 
-            <Copyright> © Copyright 2021 getiT. All rights reserved. </Copyright>
 
+           <Copyright> © Copyright 2021 getiT. All rights reserved. </Copyright>
+  
         </FooterContainer>
-
+ 
 
     )
 }

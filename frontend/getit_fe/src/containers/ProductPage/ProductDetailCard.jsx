@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const ProductContainer = styled.div`
     display: flex;
+    background: #fafafa;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 50px 0;
