@@ -8,15 +8,15 @@ export class ProductForm extends Component{
         constructor(props) {
             super(props)
             this.state = {
-                seller:'sjsj0',
+                seller: '',
                 title: '',
                 about: '',
                 description: '',
                 category: '',
                 price: '',
                 quantity: '',
-                // image: '',
-                productadded: false
+                // image: 'default.jpg',
+                productadded: false,
             }
 
             this.initialState = this.state;
@@ -81,6 +81,33 @@ export class ProductForm extends Component{
 
         }
 
+        getUser = (e) => {
+            axios
+                .get('http://127.0.0.1:8000/account/user/', {
+                    headers: {
+                        'Authorization': `Token ${sessionStorage.getItem("userToken")}`
+                    }
+                })
+                .then(response => {
+                    // console.log("Got user response")
+                    // console.log(response)
+                    // console.log(response.data.username)
+                    // alert("Got user data..user present !");
+                    this.setState({
+                    seller: response.data.username
+                    });
+                })
+                .catch(error => {
+                    // console.log("Got error")
+                    // console.log(error)
+                    // console.log(error.response.data)
+                })
+        }
+
+        componentDidMount(){
+            this.getUser();
+        }
+
     render() {
 
         const { title, about, description, category, price, quantity } = this.state
@@ -92,7 +119,8 @@ export class ProductForm extends Component{
                     Add Product Details
                 </HeaderContainer>
                 
-                <BoxContainer>
+                <BoxContainer>                    
+                    <TextLabel>{sessionStorage.getItem("userToken")}</TextLabel>
                     <Marginer direction="vertical" margin={5} />
                     <FormContainer>
                         <TextLabel>Title</TextLabel>
@@ -130,10 +158,10 @@ export class ProductForm extends Component{
                     </FormContainer>
 
                     <Marginer direction="vertical" margin={5} />
-                    <FormContainer>
+                    {/* <FormContainer>
                         <TextLabel>Photo</TextLabel>
                         {/* <input type="file" id="img" name="image" accept="image/*"/> */}
-                    </FormContainer>
+                    {/* </FormContainer> */}
 
                     <Marginer direction="vertical" margin={15} />
                     <SubmitButton onClick={this.submitHandler} type="submit">Add</SubmitButton>
