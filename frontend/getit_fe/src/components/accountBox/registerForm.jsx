@@ -94,8 +94,6 @@ export class RegisterForm extends Component {
                         this.setState({
                             isRegistered: false
                         });
-                        alert(error.response.data.email)
-                        alert(error.response.data.username)
                         // console.log(error.response.status) 
                         // console.log(error.response.headers)
                     })

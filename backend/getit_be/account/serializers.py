@@ -32,11 +32,11 @@ class UserSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
   class Meta:
     model = Account
-    fields = ('id','email', 'username', 'is_seller', 'password')
+    fields = ('id', 'username','email', 'is_seller', 'password')
     extra_kwargs = {'password': {'write_only': True}}
 
   def create(self, validated_data):
-    user = Account.objects.create_user(validated_data['username'], validated_data['email'], validated_data['is_seller'], validated_data['password'])
+    user = Account.objects.create_user(**validated_data)
     return user
 
 # Login Serializer

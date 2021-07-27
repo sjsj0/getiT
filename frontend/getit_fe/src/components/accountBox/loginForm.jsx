@@ -44,11 +44,15 @@ export class LoginForm extends Component {
                 // console.log(response)
                 // console.log(response.data.token)
                 this.setState({
-                    recievedToken: response.token,
+                    recievedToken: response.data.token,
                     isAuthenticated: true
                 });
                 alert("You are Logged in !");
 
+                sessionStorage.setItem("userToken", response.data.token);
+                console.log(sessionStorage.getItem("userToken"))
+                // console.log(this.state.recievedToken)
+                // console.log(this.state.isAuthenticated)
 
             })
             .catch(error => {
