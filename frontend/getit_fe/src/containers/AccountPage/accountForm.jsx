@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Marginer } from "../../components/accountBox/marginer";
 import  ProfileImage from "../../static/car.jpg";
+import { Navbar } from "../../components/navbar/nav_index";
 import { AccountForm } from "../../components/accountForm/accountform_Index";
+import { FooterV2 } from "../../components/footer_V2/footer_index";
 
 const ProfileImageContainer = styled.div`
 width: 350px;
@@ -81,10 +83,22 @@ export const Input = styled.input`
     }
 `;
 
+const PageContainer  = styled.div`
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+`;
+
+
 
 
 export function Profile(){
     return(
+        <PageContainer>
+            <Navbar/>
         <AccountPageContainer> 
             <ProfileImageContainer> 
             <ServiceThumbnail>
@@ -96,6 +110,8 @@ export function Profile(){
             <AccountForm/>
 
         </AccountPageContainer>
+        <FooterV2/>
+        </PageContainer>
 
     )
 }

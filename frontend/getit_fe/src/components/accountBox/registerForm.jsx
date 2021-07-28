@@ -3,6 +3,8 @@ import { BoldLink, BoxContainer, CheckboxContainer, FormContainer, Input, MutedL
 import { Marginer } from "./marginer";
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
+import swal from 'sweetalert2';
+window.Swal = swal;
 
 export class RegisterForm extends Component {
 
@@ -41,21 +43,21 @@ export class RegisterForm extends Component {
         const pass_length = password.length
 
         if (username_length === 0) {
-            alert("Username can't be blank.")
+            swal.fire("Username can't be blank.")
         }
 
         else if (email_length === 0) {
-            alert("Email can't be blank.")
+            swal.fire("Email can't be blank.")
         }
 
         else if (pass_length < 5) {
-            alert("Password should be at least of 5 characters.")
+            swal.fire("Password should be at least of 5 characters.")
         }
 
         else {
             // Password Validation
             if (password !== CPassword) {
-                alert("Passwords are not Same ! Try Again");
+                swal.fire("Passwords are not Same ! Try Again");
             }
 
             else {
@@ -85,7 +87,7 @@ export class RegisterForm extends Component {
                         this.setState({
                             isRegistered: true
                         });
-                        alert("You are Registered !");
+                        swal.fire("You are Registered !");
                     })
                     .catch(error => {
                         // console.log("Got error")
@@ -102,6 +104,7 @@ export class RegisterForm extends Component {
         }
 
     }
+    
 
     render() {
         const { username, email, password, CPassword, seller } = this.state
