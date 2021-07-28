@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import swal from 'sweetalert2';
+window.Swal = swal;
+
 
 export class Logout extends Component {
     constructor(props) {
@@ -20,14 +23,14 @@ export class Logout extends Component {
                 }
             })
             .then(response => {
-                alert("You are Logged out !");
+                swal.fire("You are Logged out !");
                 this.setState({
                     loggedOut: true
                 });
 
             })
             .catch(error => {
-                alert("You are not Logged out !");
+                swal.fire("You are not Logged out !");
                 this.setState({
                     loggedOut: false
                 });

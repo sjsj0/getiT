@@ -16,7 +16,7 @@ export class AccountForm extends Component{
             contact:'',
             isSeller: '',
         }
-        this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+        // this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
         this.initialState = this.state;
     }
 
