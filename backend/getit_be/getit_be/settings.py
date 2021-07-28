@@ -29,11 +29,7 @@ INSTALLED_APPS = [
     'account',
     'product',
     'rest_framework.authtoken',
-<<<<<<< HEAD
-    
-=======
     'knox',
->>>>>>> 3b55e083773de8723d9131d9765c8643d5894f13
 ]
 
 

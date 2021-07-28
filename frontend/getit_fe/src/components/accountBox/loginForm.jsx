@@ -74,7 +74,7 @@ export class LoginForm extends Component {
         const { username, password } = this.state
         
         if (this.state.isAuthenticated === true) {
-            return <Redirect to="/search" />
+            return <Redirect to="/profile" />
         }
 
         return (

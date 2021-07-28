@@ -52,7 +52,7 @@ export const Input = styled.input`
     padding: 0px 10px;
     ${'' /* border-bottom: 1.4px solid transparent; */}
     transition: all 200ms ease-in-out;
-    font-size: 12px;
+    font-size: 18px;
 
     &:plceholder{
         color: rgba(200, 200, 200, 1);
