@@ -8,7 +8,7 @@ export class ProductForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            seller: 'Piyush',
+            seller: '',
             title: '',
             about: '',
             description: '',
@@ -32,7 +32,7 @@ export class ProductForm extends Component {
 
         const {seller, title, about, description, category, image} = this.state;
 
-        this.setState({seller: 'Piyush'})
+        // this.setState({seller: 'Piyush'})
         let form_data = new FormData();
         form_data.append('image', this.state.image, this.state.image.name);
         form_data.append('title', this.state.title);
@@ -46,7 +46,6 @@ export class ProductForm extends Component {
         const desc_length = description.length
         const category_length = category.length
 
-        console.log(this.state)
 
         if (title_length === 0) {
             alert("Title can't be blank.")
