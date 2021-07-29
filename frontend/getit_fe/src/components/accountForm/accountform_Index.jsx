@@ -1,7 +1,10 @@
 import React, { Component} from 'react';
-import { BoxContainer, FormContainer, HeaderContainer, Input, SubmitButton, TextLabel } from "./common_account";
+import { BoxContainer, FormContainer, HeaderContainer, Input, SubmitButton, TextLabel ,ProfilePageContainer, ProfileContainer } from "./common_account";
 import { Marginer } from "../accountBox/marginer";
+import { Navbar } from "../../components/navbar/nav_index";
+import { TopSection } from './topsection';
 import axios from "axios";
+
 
 export class AccountForm extends Component{
 
@@ -13,8 +16,7 @@ export class AccountForm extends Component{
             contact:'',
             isSeller: '',
         }
-
-
+        // this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
         this.initialState = this.state;
     }
 
@@ -35,8 +37,6 @@ export class AccountForm extends Component{
                 username: response.data.username,
                 email: response.data.email,
                 isSeller: response.data.is_seller
-                
-
                 });
             })
             .catch(error => {
@@ -45,17 +45,20 @@ export class AccountForm extends Component{
                 // console.log(error.response.data)
             })
 
-            
     }
 
     componentDidMount(){
         this.getProfile();
+        this.forceUpdateHandler();
     }
 
+    forceUpdateHandler(){
+        this.forceUpdate();
+      };
 
     render() {
-
-        const { username, email, isSeller} = this.state
+       
+        const { username, email, isSeller } = this.state
         
         return(
             <div>
