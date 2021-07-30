@@ -16,7 +16,7 @@ export class AccountForm extends Component{
             contact:'',
             isSeller: '',
         }
-        // this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
+        this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
         this.initialState = this.state;
     }
 
@@ -49,6 +49,7 @@ export class AccountForm extends Component{
 
     componentDidMount(){
         this.getProfile();
+     
         this.forceUpdateHandler();
     }
 
@@ -59,7 +60,6 @@ export class AccountForm extends Component{
     render() {
        
         const { username, email, isSeller } = this.state
-        
         return(
             <div>
                 <Marginer direction="vertical" margin={10} />
@@ -103,6 +103,9 @@ export class AccountForm extends Component{
                     <Marginer direction="vertical" margin="1em" />
                 </BoxContainer>
             </div>
+            
         )
     }
+
+    
 }
