@@ -3,6 +3,8 @@ import { BoldLink, BoxContainer, FormContainer, Input, MutedLink, SubmitButton }
 import { Marginer } from "./marginer";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import swal from 'sweetalert2';
+window.Swal = swal;
 
 export class LoginForm extends Component {
 
@@ -47,7 +49,7 @@ export class LoginForm extends Component {
                     recievedToken: response.data.token,
                     isAuthenticated: true
                 });
-                alert("You are Logged in !");
+                swal.fire("You are now Logged in !");
 
                 sessionStorage.setItem("userToken", response.data.token);
                 console.log(sessionStorage.getItem("userToken"))
@@ -64,7 +66,7 @@ export class LoginForm extends Component {
                     recievedToken: 'No data from server',
                     isAuthenticated: false
                 });
-                alert("Enter correct credentials!!");
+                swal.fire("Enter correct credentials !");
             })
 
     }
@@ -74,7 +76,7 @@ export class LoginForm extends Component {
         const { username, password } = this.state
         
         if (this.state.isAuthenticated === true) {
-            return <Redirect to="/search" />
+            return <Redirect to="/profile" />
         }
 
         return (

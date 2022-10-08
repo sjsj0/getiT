@@ -1,7 +1,9 @@
-import React from "react";
+import React ,  { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Marginer } from "../accountBox/marginer";
+import axios from "axios";
+
 
 const AccessibilityContainer = styled.div`
     display: flex;
@@ -52,18 +54,114 @@ const LoginButton = styled.button`
     }
 `;
 
+// function Logincomp(props) {
 
-export function Accessibility(props) {
-    return (
+//     const flag= this.state.isAuthenticated;
+//     if(flag)
+//     {
+//         return (
+//             <Link to="/login">
+//             <LoginButton>Login</LoginButton>
+//             </Link>
+//         );
+//     }
+  
+//   }
+
+export class Accessibility extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: '',
+            isAuthenticated: false,
+            recievedToken: ''
+        }
+
+        this.initialState = this.state
+    }
+
+    
+    getProfile = (e) => {
+        
+        axios
+            .get('http://127.0.0.1:8000/account/user/', {
+                headers: {
+                    'Authorization': `Token ${sessionStorage.getItem("userToken")}`
+                }
+            })
+            .then(response => {
+                console.log("Got user response")
+                console.log(response)
+                console.log(response.data)
+                // alert("Got user data..user present !");
+                this.setState({
+                    username: response.data.username,
+                    recievedToken: response.data.token,
+                    isAuthenticated: true
+                });
+
+                sessionStorage.setItem("userToken", response.data.token);
+                console.log(sessionStorage.getItem("userToken"))
+            })
+            .catch(error => {
+                // console.log("Got error")
+                // console.log(error)
+                // console.log(error.response.data)
+                this.setState({
+                    recievedToken: 'No data from server',
+                    isAuthenticated: false
+                });
+            })
+
+    }
+
+
+    componentDidMount()
+    {
+        this.getProfile();
+    }
+  
+    render() {
+
+        // let flag= this.state.isAuthenticated;
+        // console.log(flag);
+        let logincomp;
+        let registercomp;
+        let logoutcomp;
+
+
+        if(this.state.isAuthenticated===false)
+            {
+                logincomp =  <Link to="/login"><LoginButton>Login</LoginButton></Link>
+                registercomp = <Link to="/register">  <RegisterButton>Register</RegisterButton>    </Link>
+            }
+        
+        else
+        {
+            logoutcomp = <Link to = "/logout"><LoginButton>Logout</LoginButton>  </Link>
+        }
+        
+        return(
         <AccessibilityContainer>
-            <Link to="/register">
+            {/* <Link to="/register">
                 <RegisterButton>Register</RegisterButton>
-            </Link>
-            <Marginer direction="horizontal" margin={10} />
+            </Link> */}
+            {/* <Marginer direction="horizontal" margin={10} /> */}
 
+            {/* <Logincomp/> */}
+            
+            {registercomp}
+            <Marginer direction="horizontal" margin={10} />
+            {logincomp}
+            {logoutcomp}
+           
+{/* 
             <Link to="/login">
                 <LoginButton>Login</LoginButton>
-            </Link>
+            </Link> */}
         </AccessibilityContainer>
-    )
+        
+        )
+}
 }
